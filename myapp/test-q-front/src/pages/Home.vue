@@ -38,6 +38,7 @@
 <script>
 import axios from 'axios';
 import Qcard from '../components/Qcard';
+
 export default {
   name: 'Home',
   components: {

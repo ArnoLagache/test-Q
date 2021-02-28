@@ -13,7 +13,7 @@
 			<b-col cols="12">
 				<b-card-group deck>
 					<b-row class="text-center justify-content-md-center">
-						<b-col cols="6" md="3" v-for="rankedCard in rankedCards" :key="rankedCard">
+						<b-col cols="6" md="3" v-for="rankedCard in rankedCards" :key="rankedCard.id">
 							<RankedQcard :cardSource='rankedCard.source' :cardRank='rankedCard.rank' :cardLikes='rankedCard.likes' :cardDislikes='rankedCard.dislikes' :cardId='rankedCard.id' ></RankedQcard>
 						</b-col>
 					</b-row>
@@ -56,7 +56,6 @@ export default {
 			.then(response => {
 				if(response !== undefined && response.data !== undefined) {
 					this.rankedCards = response.data;
-					console.log(this.rankedCards)
 				}
 			})
 			.catch(err => {

@@ -11,8 +11,6 @@
 export default {
     name: 'RankedQcard',
     props: ['cardSource', 'cardRank', 'cardDislikes', 'cardLikes', 'cardId'],
-    data(){
-    }
 }
 </script>
 
