@@ -1,0 +1,158 @@
+$green: #97c93c;
+$red: #fc5454;
+$white: #ffffff;
+$black: #000000;
+$grey: #7a7a7a;
+
+$breakpoint-large: 992px;
+$breakpoint-medium: 768px;
+$breakpoint-small: 576px;
+$breakpoint-xsmall: 320px;
+
+h1, .navbar-brand{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2rem;
+    line-height: 2rem;
+    font-weight: 700;
+    color: $green;
+    white-space: initial;
+    @media (min-width: $breakpoint-xsmall) and (max-width: $breakpoint-small){
+        font-size: 1.8rem;
+        line-height: 1.8rem;
+    }
+}
+p, .btn{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.2rem;
+    color: $black;
+    @media (min-width: $breakpoint-xsmall) and (max-width: $breakpoint-small){
+        font-size: 1rem;
+    }
+    i{
+        color: $green;
+        font-weight: 700;
+    }
+}
+body{
+    background-color: $green;
+    .container-sm{
+        padding-bottom: 10rem;
+        header{
+            background-color: $white !important;            
+            border-bottom-left-radius: 3rem;
+            border-bottom-right-radius: 3rem;
+            padding: 1.2rem 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 5px $grey;
+            @media (max-width: $breakpoint-medium){
+                padding: 1rem;
+            }
+        }
+        .card-deck{
+            .card{
+                margin-bottom: 2rem;
+            }
+        }       
+        .card{
+            display: flex;      
+            justify-content: center;
+            align-items: center;
+            border-radius: 1rem;
+            box-shadow: 0 2px 5px $grey;
+            margin-bottom: 2rem;
+            @media (max-width: $breakpoint-medium){
+                margin-bottom: 8rem;
+            }
+            @media (max-width: $breakpoint-small){
+                margin-bottom: 8rem;
+            }
+            &::after{
+                content: "";
+                display: block;
+                padding-bottom: 100%;
+            }
+            .card-body{
+                width: 100%;
+                height: 100%;
+                position: absolute;                
+                flex: initial;
+                img{
+                    width: 80%;
+                    height: auto;
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    margin: auto;
+                }
+                .card-rank{
+                    position: absolute;
+                    top: 0.5rem;
+                    left: 0.5rem;
+                    font-weight: 700;
+                }
+                .card-dislikes{
+                    position: absolute;
+                    top: 0.5rem;
+                    right: 0.5rem;
+                    color: $white;
+                    background-color: $red;
+                    padding: 0 5px;
+                    border-radius: 15px;                    
+                }
+                .card-likes{
+                    position: absolute;
+                    top: 0.5rem;
+                    right: 3rem;
+                    color: $white;
+                    background-color: $green;
+                    padding: 0 5px;
+                    border-radius: 15px;
+                }
+                .btn{
+                    width: 4rem;
+                    height: 4rem;
+                    position: absolute;
+                    top: calc(50% - 2rem);                    
+                    font-weight: 700;
+                    font-size: 2rem;
+                    margin: 0;
+                    &.dislike-btn{
+                        left: -6rem;
+                        i{
+                            color: $red;
+                        }
+                    }
+                    &.like-btn{                        
+                        right: -6rem;
+                        i{
+                            color: $green;
+                        }
+                    }
+                    @media (max-width: $breakpoint-medium){
+                        top: initial;
+                        bottom: -6rem;
+                        &.dislike-btn{
+                            left: 20vw;
+                        }
+                        &.like-btn{
+                            right: 20vw;
+                        }
+                    }
+                }
+            }
+        }
+        .btn{
+            border: none;
+            border-radius: 4rem;
+            background-color: $white;            
+            box-shadow: 0 2px 5px $grey;
+            padding: 0.5rem 1rem;
+            i{
+                margin-right: 1rem;
+            }
+        }
+    }
+}
