@@ -5,7 +5,7 @@
 npm install
 ```
 
-### Compiles and hot-reloads for development (listens port 8080)
+### Compiles and hot-reloads for development (listens to port 8080)
 ```
 npm run serve
 ```
