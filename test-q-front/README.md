@@ -1,6 +1,6 @@
 # test-q-front
 
-## Project setup
+## Project setup (listens port 8080)
 ```
 npm install
 ```
