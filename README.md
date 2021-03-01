@@ -13,3 +13,5 @@ Front-end :
 - Réalisé avec [Vue.js](https://vuejs.org/)
 
 - CSS géré avec [Sass](https://sass-lang.com/), les fichiers sont importés depuis "/src/style/"
+
+- Pages et composants disponibles dans "test-q-front/src/"
