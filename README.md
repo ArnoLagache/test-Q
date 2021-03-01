@@ -1,4 +1,4 @@
 # test-Q
 
 Back-end :
-Readme dispo dans [test-q-back](./test-Q/tree/master/test-q-back)
+Readme dispo dans [test-q-back](./master/test-q-back)
