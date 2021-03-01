@@ -1,11 +1,11 @@
 # test-q-front
 
-## Project setup (listens port 8080)
+## Project setup
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### Compiles and hot-reloads for development (listens port 8080)
 ```
 npm run serve
 ```
