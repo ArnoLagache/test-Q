@@ -1,0 +1,31 @@
+//CSS reset once bootstrap's is loaded
+
+//titles
+h1, .navbar-brand{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2rem;
+    line-height: 2rem;
+    font-weight: 700;
+    color: $green;
+    white-space: initial;
+    @media (min-width: $bp-xsmall) and (max-width: $bp-small){
+        font-size: 1.8rem;
+        line-height: 1.8rem;
+    }
+}
+
+//paragraph, button,...
+p, .btn{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.2rem;
+    color: $black;
+    border: none;
+    @media (min-width: $bp-xsmall) and (max-width: $bp-small){
+        font-size: 1rem;
+    }
+    i{
+        color: $green;
+        font-weight: 700;
+    }
+}

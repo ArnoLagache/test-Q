@@ -8,11 +8,10 @@
 </template>
 
 <script>
+
 export default {
     name: 'RankedQcard',
     props: ['cardSource', 'cardRank', 'cardDislikes', 'cardLikes', 'cardId'],
 }
-</script>
 
-<style scoped>
-</style>
+</script>

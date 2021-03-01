@@ -1,39 +1,8 @@
-$green: #97c93c;
-$red: #fc5454;
-$white: #ffffff;
-$black: #000000;
-$grey: #7a7a7a;
+//Sass import parameters, reset, ... (all custom sass files)
+@import "parameters";
+@import "reset";
 
-$breakpoint-large: 992px;
-$breakpoint-medium: 768px;
-$breakpoint-small: 576px;
-$breakpoint-xsmall: 320px;
-
-h1, .navbar-brand{
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 2rem;
-    line-height: 2rem;
-    font-weight: 700;
-    color: $green;
-    white-space: initial;
-    @media (min-width: $breakpoint-xsmall) and (max-width: $breakpoint-small){
-        font-size: 1.8rem;
-        line-height: 1.8rem;
-    }
-}
-p, .btn{
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 1.2rem;
-    line-height: 1.2rem;
-    color: $black;
-    @media (min-width: $breakpoint-xsmall) and (max-width: $breakpoint-small){
-        font-size: 1rem;
-    }
-    i{
-        color: $green;
-        font-weight: 700;
-    }
-}
+//Global style
 body{
     background-color: $green;
     .container-sm{
@@ -43,28 +12,19 @@ body{
             border-bottom-left-radius: 3rem;
             border-bottom-right-radius: 3rem;
             padding: 1.2rem 2rem;
-            margin-bottom: 2rem;
             box-shadow: 0 2px 5px $grey;
-            @media (max-width: $breakpoint-medium){
+            @media (max-width: $bp-medium){
                 padding: 1rem;
             }
-        }
-        .card-deck{
-            .card{
-                margin-bottom: 2rem;
-            }
-        }       
+        }    
         .card{
-            display: flex;      
-            justify-content: center;
-            align-items: center;
             border-radius: 1rem;
             box-shadow: 0 2px 5px $grey;
             margin-bottom: 2rem;
-            @media (max-width: $breakpoint-medium){
+            @media (max-width: $bp-medium){
                 margin-bottom: 8rem;
             }
-            @media (max-width: $breakpoint-small){
+            @media (max-width: $bp-small){
                 margin-bottom: 8rem;
             }
             &::after{
@@ -87,29 +47,25 @@ body{
                     right: 0;
                     margin: auto;
                 }
-                .card-rank{
+                .card-rank, .card-likes, .card-dislikes{
                     position: absolute;
                     top: 0.5rem;
+                    padding: 0 5px;
+                    border-radius: 15px;
+                }
+                .card-rank{
                     left: 0.5rem;
                     font-weight: 700;
                 }
                 .card-dislikes{
-                    position: absolute;
-                    top: 0.5rem;
                     right: 0.5rem;
                     color: $white;
-                    background-color: $red;
-                    padding: 0 5px;
-                    border-radius: 15px;                    
+                    background-color: $red;                 
                 }
                 .card-likes{
-                    position: absolute;
-                    top: 0.5rem;
                     right: 3rem;
                     color: $white;
                     background-color: $green;
-                    padding: 0 5px;
-                    border-radius: 15px;
                 }
                 .btn{
                     width: 4rem;
@@ -131,7 +87,7 @@ body{
                             color: $green;
                         }
                     }
-                    @media (max-width: $breakpoint-medium){
+                    @media (max-width: $bp-medium){
                         top: initial;
                         bottom: -6rem;
                         &.dislike-btn{
@@ -144,8 +100,7 @@ body{
                 }
             }
         }
-        .btn{
-            border: none;
+        .btn{            
             border-radius: 4rem;
             background-color: $white;            
             box-shadow: 0 2px 5px $grey;

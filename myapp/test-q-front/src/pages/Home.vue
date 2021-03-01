@@ -1,6 +1,6 @@
 <template>
 	<b-container fluid="sm">
-		<b-row class="text-center">
+		<b-row class="text-center mb-5">
 			<b-col>
 				<header>
 					<b-navbar-brand tag="h1" class="mb-0">{{ title }}<u>{{ titleEnd }}</u></b-navbar-brand>
@@ -36,46 +36,46 @@
 </template>
 
 <script>
+
 import axios from 'axios';
 import Qcard from '../components/Qcard';
 
 export default {
-  name: 'Home',
-  components: {
-	Qcard
-  },
-  data() {
-	return {
-	  title: 'Le meilleur site de Q ',
-	  titleEnd: 'du monde !',
-	  siteIntro: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
-	  mailAdress: 'tulasvumonq@sitedeq.fr',	  
-	  currentCard: {}
+	name: 'Home',
+	components: {
+		Qcard
+	},
+  	data() {
+		return {
+		title: 'Le meilleur site de Q ',
+		titleEnd: 'du monde !',
+		siteIntro: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
+		mailAdress: 'tulasvumonq@sitedeq.fr',	  
+		currentCard: {}
+		}
+	},
+	methods: {
+		nextCard: function(){
+			//Fetching a random card from the route '/qlist/random'
+			axios.get('http://localhost:3000/qlist/random')
+			.then(response => {
+				if(response !== undefined && response.data !== undefined) {
+					this.currentCard = response.data;
+				}
+			})
+			.catch(err => {
+				console.log(err)
+			})
+		}
+	},
+	computed: {
+		mail: function(){
+		return 'mailto:' + this.mailAdress
+		}
+	},
+	mounted() {
+		this.nextCard();
 	}
-  },
-  methods: {
-	  nextCard: function(){
-		axios.get('http://localhost:3000/qlist/random')
-		.then(response => {
-			if(response !== undefined && response.data !== undefined) {
-				this.currentCard = response.data;
-			}
-		})
-		.catch(err => {
-			console.log(err)
-		})
-	  }
-  },
-  computed: {
-	mail: function(){
-	  return 'mailto:' + this.mailAdress
-	}
-  },
-  mounted() {
-	  this.nextCard();
-  }
 }
-</script>
 
-<style scoped>
-</style>
+</script>

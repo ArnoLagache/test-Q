@@ -12,5 +12,5 @@ export default {
 </style>
 
 <style lang="sass">
-@import './style.scss'
+@import './style/style.scss'
 </style>

@@ -23,19 +23,22 @@ app.use((req, res, next) => {
 });
 
 let Qlist = [];
+//Loading a csv file in order to get data from it
 fs.createReadStream("./public/csv/Liste_Q.csv")
     .pipe(csv(['url']))
     .on('data', (row) => {
         var data = {
             source: row.url,
+            //likes & dislikes are randomized in order to get a fake ranking already ready to use
             likes: Math.floor(Math.random() * 100),
-            dislikes: Math.floor(Math.random() * 100),
+            dislikes: Math.floor(Math.random() * 100),            
             rank: 0,
             id: -1
         }
         Qlist.push(data)
     })
     .on('end', () => {
+        //Sorting all entries by number of likes
         Qlist.sort(function(a, b) {
             return b.likes - a.likes;
         });

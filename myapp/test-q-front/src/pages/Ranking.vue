@@ -1,6 +1,6 @@
 <template>  
 	<b-container fluid="sm">
-		<b-row class="text-center">
+		<b-row class="text-center mb-5">
 			<b-col>
 				<header>
 					<b-navbar-brand tag="h1" class="mb-0">{{ Rankingtitle }}</b-navbar-brand>
@@ -36,8 +36,10 @@
 </template>
 
 <script>
+
 import axios from 'axios';
 import RankedQcard from '../components/RankedQcard';
+
 export default {
     name: 'Ranking',
     components: {
@@ -52,6 +54,7 @@ export default {
     },
 	methods: {
 		getRank: function(){
+			//Fetching all cards sorted by number of likes from route '/qlist/'
 			axios.get('http://localhost:3000/qlist/')
 			.then(response => {
 				if(response !== undefined && response.data !== undefined) {
@@ -68,6 +71,3 @@ export default {
 	}
 }
 </script>
-
-<style>
-</style>
